@@ -1,0 +1,93 @@
+* {
+    border: none;
+    border-radius: 10px;
+    font-family: "JetBrainsMono Nerd Font Propo";
+    font-weight: 700;
+    font-size: 12px;
+
+    min-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+window#waybar {
+    background: transparent;
+    color: white;
+}
+
+tooltip {
+  background: rgba(43, 48, 59, 0.5);
+  border: 1px solid rgba(100, 114, 125, 0.5);
+}
+tooltip label {
+  color: white;
+}
+
+#workspaces button {
+	min-width: 15px;
+	transition: all 0.2s ease-in-out;
+	margin: 0 2px;
+    padding: 0 5px;
+    background: #121212;
+    color: #b7d8aa;
+}
+
+#workspaces button.focused {
+	min-width: 50px;
+	background: #b7d8aa;
+	color: #121212;
+}
+
+#backlight {
+    background-color: transparent;
+    color: #b7d8aa;
+    padding: 0 5px;
+    margin: 0 10px;
+    border-radius: 5px;
+    border: solid 2px #b7d8aa;
+
+}
+
+#clock {
+	font-weight: 800;
+	font-size: 16px;
+	background: #121212;
+	padding: 2px 20px;
+    color: #b7f8aa;
+}
+
+#battery, #pulseaudio {
+    background-color: #b7d8aa;
+    color: #121212;
+    padding: 0 5px;
+    margin: 0 10px;
+    border-radius: 5px;
+}
+
+#battery.charging {
+    background-color: green;
+    color: white;
+    padding: 0 5px;
+    margin: 0 10px;
+    border-radius: 5px;
+}
+
+#network {
+    background-color: transparent;
+    color: #b7d8aa;
+    padding: 0 5px;
+    margin: 0 10px;
+    border-radius: 5px;
+}
+
+
+#cpu {
+    min-width: 60px;
+    background-color: transparent;
+    color: #b7d8aa;
+    padding: 0 5px;
+    margin: 0 10px;
+    border-radius: 5px;
+    border: dotted 2px #b7d8aa;
+
+}

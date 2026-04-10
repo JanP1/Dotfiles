@@ -1,0 +1,16 @@
+oh-my-posh init pwsh --config C:\Users\Jan\Documents\OhMyPoshThemes\zen.toml | Invoke-Expression
+function gitlog {
+    git log --graph --abbrev-commit --decorate --format="format:`"%C(bold blue)%h%C(reset) - %C(bold green)(%ar)%C(reset) %C(white)%s%C(reset) %C(dim white)- %an%C(reset)%C(auto)%d%C(reset)`"" --all
+}
+
+
+# Remove the default alias for ls if it exists
+if (Get-Alias ls -ErrorAction SilentlyContinue) {
+    Remove-Item Alias:ls -ErrorAction SilentlyContinue
+}
+
+# Define function ls to override alias
+function ls {
+    eza --icons=always --color=always --oneline @args
+}
+function ls { eza --icons=always --color=always }
