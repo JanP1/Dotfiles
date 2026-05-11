@@ -1,11 +1,20 @@
 ### BORDERS
 default_floating_border pixel 0
-hide_edge_borders both
+hide_edge_borders none
 
 
 # Set default border style
-default_border pixel 0
+default_border pixel 2
 
+set $base00 #203826
+
+## Window Colours
+client.focused $base00 $base00 $base00 $base00 
+client.focused_inactive $base00 $base00 $base00 $base00 
+client.unfocused  $base00 $base00 $base00 $base00 
+client.urgent  $base00 $base00 $base00 $base00 
+client.placeholder $base00 $base00 $base00 $base00 
+client.background $base00 $base00 $base00 $base00
 
 # Gaps between windows
 gaps inner 10

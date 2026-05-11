@@ -83,6 +83,10 @@ bindsym $mod+Shift+g exec "pkill -x gammastep"
 #
 # Basics:
 #
+
+
+    # Locking screen
+    bindsym $mod+semicolon exec swaylock
     # Start a terminal
     bindsym $mod+Return exec $term
 
@@ -93,6 +97,8 @@ bindsym $mod+Shift+g exec "pkill -x gammastep"
     bindsym $mod+d exec $menu
 
     bindsym $mod+b exec firefox
+
+    bindsym $mod+Shift+s exec grim -g "$(slurp)" - | wl-copy
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
@@ -130,6 +136,9 @@ bindsym $mod+Shift+g exec "pkill -x gammastep"
     bindsym $mod+Shift+Down move down
     bindsym $mod+Shift+Up move up
     bindsym $mod+Shift+Right move right
+
+    bindsym $mod+Ctrl+Shift+Up sticky toggle
+
 #
 # Workspaces:
 #
@@ -258,8 +267,23 @@ input "type:keyboard" {
 #     }
 # }
 
+
+# =============== Themes =================
+# Set GTK theme, icon theme, and cursor
+exec_always {
+    gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+    gsettings set org.gnome.desktop.interface gtk-theme 'Everforest-B-LB-Dark-Medium'
+    gsettings set org.gnome.desktop.interface icon-theme 'Everforest-B-LB-Dark-Medium'
+    gsettings set org.gnome.desktop.interface icon-theme 'Gruvbox'
+}
+# ========================================
+
 exec waybar
+
+exec dbus-update-activation-environment --all
+exec mako
 
 include /home/jan/.config/sway/appearence
 
 include /etc/sway/config.d/*
+
