@@ -4,7 +4,7 @@
     "width": 1900,
     "modules-left": ["sway/workspaces"],
     "modules-center": ["clock"],
-    "modules-right": ["cpu", "backlight", "network", "pulseaudio", "battery"],
+    "modules-right": ["mpris","cpu", "backlight", "network", "pulseaudio", "battery"],
     "sway/window": {
         "max-length": 50
     },
@@ -20,16 +20,16 @@
 	    "format-bluetooth": "{volume}% {icon}",
 	    "format-muted": "",
 	    "format-icons": {
-		"alsa_output.pci-0000_00_1f.3.analog-stereo": "",
-		"alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
-		"headphone": "",
-		"hands-free": "",
-		"headset": "",
-		"phone": "",
-		"phone-muted": "",
-		"portable": "",
-		"car": "",
-		"default": ["", ""]
+        "alsa_output.pci-0000_00_1f.3.analog-stereo": "",
+        "alsa_output.pci-0000_00_1f.3.analog-stereo-muted": "",
+        "headphone": "",
+        "hands-free": "",
+        "headset": "",
+        "phone": "",
+        "phone-muted": "",
+        "portable": "",
+        "car": "",
+        "default": ["", ""]
 	    },
 	    "scroll-step": 1,
 	    "on-click": "pavucontrol",
@@ -37,7 +37,7 @@
 	},
 
 	"network": {
-	    "interface": "wlp3s0",
+	    "interface": "wlp2s0",
 	    "format": "{ifname}",
 	    "format-wifi": "{essid} ({signalStrength}%) ",
 	    "format-ethernet": "{ipaddr}/{cidr} 󰊗",
@@ -48,21 +48,9 @@
 	    "tooltip-format-disconnected": "Disconnected",
 	    "max-length": 50
 	},
-	"hyprland/workspaces": {
-	  "format": "{icon}",
-	  "on-click": "activate",
-	  "format-icons": {
-		"1": "1",
-		"2": "2",
-		"3": "3",
-		"4": "4",
-		"5": "5"
-	  },
-	  "sort-by-number": true
-	},
 	"backlight": {
 	    "device": "intel_backlight",
-	    "format": "Backlight - {percent}% {icon}",
+	    "format": "{percent}% {icon}",
 	    "format-icons": ["", ""]
 	},
 	"cpu": {
@@ -78,5 +66,20 @@
 	    "<span color='#ff9977'>▇</span>",
 	    "<span color='#dd532e'>█</span>"
 	  ]
-	}
+	},
+  "mpris": {
+    "format": "{player_icon}  {dynamic}",
+    "format-paused": "{status_icon}  {dynamic}",
+    "album-len": 0,
+    "interval": 1,
+    "dynamic-len": 50,
+    "player-icons": {
+      "default": "",
+      "mpv": "🎵"
+    },
+    "status-icons": {
+      "paused": "▶"
+    }
+    // "ignored-players": ["firefox"]
+  }
 }

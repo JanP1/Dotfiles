@@ -22,7 +22,7 @@ set $menu "pkill -x rofi; /home/jan/.rofi_launcher/rofi_menu_command.sh"
 ### Output configuration
 #
 # Default wallpaper (more resolutions are available in /usr/share/backgrounds/sway/)
-output * bg /home/jan/Pictures/Wallpapers/plants.jpg fill
+output * bg /home/jan/Pictures/Wallpapers/a_house_in_the_woods.png fill
 #
 # Example configuration:
 #
@@ -70,7 +70,7 @@ bindsym $mod+Shift+r exec /home/jan/.config/waybar/scripts/launcher.sh
 
 
 # Touchpad ====================
-input "2:7:SynPS/2_Synaptics_TouchPad" {
+input "2:8:AlpsPS/2_ALPS_DualPoint_TouchPad" {
 	natural_scroll enabled
 }
 # =============================
@@ -272,16 +272,25 @@ input "type:keyboard" {
 # Set GTK theme, icon theme, and cursor
 exec_always {
     gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
-    gsettings set org.gnome.desktop.interface gtk-theme 'Everforest-B-LB-Dark-Medium'
-    gsettings set org.gnome.desktop.interface icon-theme 'Everforest-B-LB-Dark-Medium'
-    gsettings set org.gnome.desktop.interface icon-theme 'Gruvbox'
+    gsettings set org.gnome.desktop.interface gtk-theme 'Breeze-Dark'
+    gsettings set org.gnome.desktop.interface icon-theme 'Breeze-Dark'
+    gsettings set org.gnome.desktop.interface icon-theme 'YAMIS'
 }
+# ========================================
+
+
+
+# ==== APP RULES =========================
+
+for_window [app_id="blueman-manager"] floating enable
+
 # ========================================
 
 exec waybar
 
 exec dbus-update-activation-environment --all
 exec mako
+exec gammastep -O 4500
 
 include /home/jan/.config/sway/appearence
 

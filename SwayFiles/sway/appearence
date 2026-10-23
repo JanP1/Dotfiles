@@ -1,5 +1,5 @@
 ### BORDERS
-default_floating_border pixel 0
+default_floating_border pixel 2
 hide_edge_borders none
 
 
