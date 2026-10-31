@@ -86,7 +86,7 @@ bindsym $mod+Shift+g exec "pkill -x gammastep"
 
 
     # Locking screen
-    bindsym $mod+semicolon exec swaylock
+    bindsym $mod+semicolon exec wlogout -b 4
     # Start a terminal
     bindsym $mod+Return exec $term
 
@@ -289,7 +289,7 @@ for_window [app_id="blueman-manager"] floating enable
 exec waybar
 
 exec dbus-update-activation-environment --all
-exec mako
+exec swaync
 exec gammastep -O 4500
 
 include /home/jan/.config/sway/appearence
